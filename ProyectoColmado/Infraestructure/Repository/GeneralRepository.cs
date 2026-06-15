@@ -56,5 +56,11 @@ namespace Infraestructure.Repository
            return _context.Set<T>().Where(isDelete).ToList();
 
         }
+
+        public bool Exists(Expression<Func<T, bool>> name)
+        {
+            return _context.Set<T>().Any(name);
+        }
+
     }
 }
