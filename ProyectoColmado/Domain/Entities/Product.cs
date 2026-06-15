@@ -14,7 +14,6 @@ namespace Domain.Entities
         public decimal Price { get; set; }
         public decimal SalePrice { get; set; }
         public int Stock { get; set; }
-        [ForeignKey("IdCategory")]
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public char IsDelete { get; set; } = '0';
