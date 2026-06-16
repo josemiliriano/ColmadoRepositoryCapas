@@ -58,6 +58,7 @@ namespace Infraestructure.Categoria
             {
                 return false;
             }
+            SDCategory.Isdelete = '1';
             _categoryRepository.SoftDelete(SDCategory);
             return true;
         }
@@ -72,5 +73,10 @@ namespace Infraestructure.Categoria
             }
             return _categoryRepository.Update(UpCategory);
         }
+        public List<Category> GetAllCategoryWihtCondition()
+        {
+            return _categoryRepository.GetAll().Where(c=> c.Isdelete =='0').ToList();
+        }
+        
     }
 }

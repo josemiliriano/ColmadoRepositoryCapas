@@ -14,5 +14,6 @@ namespace Infraestructure.Categoria
         public Category UpdateCategory(int id, CategoriaDto category);
         public void DeleteCategory(int id);
         public bool SoftDelete(int id);
+        public List<Category> GetAllCategoryWihtCondition();
     }
 }
