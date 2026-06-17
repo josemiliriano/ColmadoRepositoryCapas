@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Domain.Entities
 {
-    public class Product
+    public class CDProduct
     {
         [Key]
         public int IdProduct { get; set; }

@@ -3,6 +3,7 @@ using Infraestructure.Categoria;
 using Infraestructure.Data;
 using Infraestructure.Repository;
 using Microsoft.EntityFrameworkCore;
+using Infraestructure.Product;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped(typeof(GeneralRepository<Category>));
 builder.Services.AddScoped<ICategoryAppServices, CategoryAppService>();
+builder.Services.AddScoped(typeof(GeneralRepository<CDProduct>));
+builder.Services.AddScoped<IProductAppService, ProductAppService>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
