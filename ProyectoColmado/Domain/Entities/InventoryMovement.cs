@@ -11,7 +11,7 @@ namespace Domain.Entities
         [Key]
         public int IdInventoryMovement { get; set; }
         public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public CDProduct Product { get; set; }
         public int MovementTypeiD { get; set; }
         public MovementType MovementType { get; set; }
         public int Quantity { get; set; }
