@@ -4,6 +4,7 @@ using Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestructure.Migrations
 {
     [DbContext(typeof(MyDataContext))]
-    partial class MyDataContextModelSnapshot : ModelSnapshot
+    [Migration("20260617231735_CorreccionTabla")]
+    partial class CorreccionTabla
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,7 +57,7 @@ namespace Infraestructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Domain.Entities.Category", b =>
@@ -79,7 +82,7 @@ namespace Infraestructure.Migrations
 
                     b.HasKey("IdCategory");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Domain.Entities.InventoryMovement", b =>
@@ -120,7 +123,7 @@ namespace Infraestructure.Migrations
 
                     b.HasIndex("ProviderId");
 
-                    b.ToTable("InventoryMovements", (string)null);
+                    b.ToTable("InventoryMovements");
                 });
 
             modelBuilder.Entity("Domain.Entities.MovementType", b =>
@@ -141,7 +144,7 @@ namespace Infraestructure.Migrations
 
                     b.HasKey("IdMovementType");
 
-                    b.ToTable("MovementTypes", (string)null);
+                    b.ToTable("MovementTypes");
                 });
 
             modelBuilder.Entity("Domain.Entities.Provider", b =>
@@ -182,7 +185,7 @@ namespace Infraestructure.Migrations
 
                     b.HasKey("IdProvider");
 
-                    b.ToTable("Providers", (string)null);
+                    b.ToTable("Providers");
                 });
 
             modelBuilder.Entity("Domain.Entities.CDProduct", b =>
