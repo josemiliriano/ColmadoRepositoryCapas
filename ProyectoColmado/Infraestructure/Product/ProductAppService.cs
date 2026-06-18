@@ -35,6 +35,7 @@ namespace Infraestructure.Product
                 CategoryId = product.CategoryId
 
             };
+            _repository.Add(newProduct);
             return newProduct;
         }           
 
@@ -80,6 +81,7 @@ namespace Infraestructure.Product
             {
                 SDProdudct.IsDelete = '1';
             }
+            _repository.SoftDelete(SDProdudct);
             return true;
         }
 

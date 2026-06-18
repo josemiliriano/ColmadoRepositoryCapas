@@ -13,7 +13,7 @@ namespace Infraestructure.Data
 
         }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<CDProduct> Products { get; set; }
         public DbSet<Provider> Providers { get; set; }
         public DbSet<MovementType> MovementTypes { get; set; }
         public DbSet<InventoryMovement>InventoryMovements { get; set; }        
