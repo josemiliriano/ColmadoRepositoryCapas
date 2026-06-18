@@ -1,5 +1,6 @@
 ﻿using Infraestructure.Categoria;
 using Infraestructure.Categoria.DTOs;
+using Infraestructure.Eceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,8 +19,17 @@ namespace ApiColmado.Controllers
         [HttpPost]
         public IActionResult CreateCategory(CategoriaDto dto)
         {
-            var newCategory = _categoryAppServices.AddCategory(dto);
-            return Ok(newCategory);                
+            try
+            {
+                var newCategory = _categoryAppServices.AddCategory(dto);
+                return Ok(newCategory);                
+
+            }
+            catch (AlreadyExistsException e)
+            {
+
+                return BadRequest(e);
+            }
         }
         [Route("api/[controller]/GetAllCategory")]
         [HttpGet]

@@ -17,20 +17,27 @@ namespace Infraestructure.Categoria
         }
         public Category AddCategory(CategoriaDto category)
         {
-            var exists = _categoryRepository.Exists(c => c.CategoryName.ToLower() == category.CategoryName.ToLower());
-
-            if (exists)
+            try
             {
-                throw new AlreadyExistsException("Categoría",category.CategoryName);
+                var exists = _categoryRepository.Exists(c => c.CategoryName.ToLower() == category.CategoryName.ToLower());
+
+                if (exists)
+                {
+                    throw new AlreadyExistsException("Categoría", category.CategoryName);
+                }
+
+                var newCategory = new Category
+                {
+                    CategoryName = category.CategoryName,
+                    Description = category.Description
+                };
+
+                return _categoryRepository.Add(newCategory);
             }
-
-            var newCategory = new Category
+            catch(AlreadyExistsException e)
             {
-                CategoryName = category.CategoryName,
-                Description = category.Description
-            };
-
-            return _categoryRepository.Add(newCategory);
+                throw new(e.Message);
+            }
         }  
         
         public void DeleteCategory(int id)

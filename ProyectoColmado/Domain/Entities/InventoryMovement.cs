@@ -18,7 +18,7 @@ namespace Domain.Entities
         public DateTime MovementDate { get; set; } = DateTime.Now;
         public string? Description { get; set; }
         public int? ProviderId { get; set; }
-        public Provider? Provider { get; set; }
+        public CDProvider? Provider { get; set; }
         public char IsDelete { get; set; } = '0';
     }
 }
