@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Infraestructure.Categoria.DTOs;
+using Infraestructure.Eceptions;
 using Infraestructure.Repository;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Infraestructure.Categoria
 
             if (exists)
             {
-                throw new Exception("La categoría ya existe.");
+                throw new AlreadyExistsException("Categoría",category.CategoryName);
             }
 
             var newCategory = new Category
