@@ -16,6 +16,6 @@ namespace Infraestructure.Data
         public DbSet<CDProduct> Products { get; set; }
         public DbSet<CDProvider> Providers { get; set; }
         public DbSet<MovementType> MovementTypes { get; set; }
-        public DbSet<InventoryMovement>InventoryMovements { get; set; }        
+        public DbSet<CDInventoryMovement>InventoryMovements { get; set; }        
     }
 }
