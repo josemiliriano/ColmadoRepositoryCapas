@@ -53,8 +53,8 @@ namespace Infraestructure.Provider
 
         public List<CDProvider> GetAllProviderWihtCondition()
         {
-            return _serviceProvider.GetAll().Where(p => p.IsDelete == 0).ToList();
-            
+            return _serviceProvider.GetAll().Where(p => p.IsDelete == '0').ToList();            
+
         }
 
         public CDProvider GetById(int id)
