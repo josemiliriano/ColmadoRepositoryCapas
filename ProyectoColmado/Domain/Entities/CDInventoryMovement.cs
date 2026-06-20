@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Domain.Entities
 {
-    public class InventoryMovement
+    public class CDInventoryMovement
     {
         [Key]
         public int IdInventoryMovement { get; set; }
