@@ -18,6 +18,6 @@ namespace Infraestructure.InventoryMovement
         public void DeleteTrasaction(int id);
         public bool SoftDelete(int id);
         public List<CDInventoryMovement> GetAllTransactionWihtCondition();
-        public List<TrasactionCompleteDto> GetAllTransactionWihtCategory();
+        public List<TrasactionCompleteDto> GetAllTransactionComplete();
     }
 }
