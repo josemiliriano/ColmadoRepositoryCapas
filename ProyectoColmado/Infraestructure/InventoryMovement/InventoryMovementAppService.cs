@@ -98,7 +98,7 @@ namespace Infraestructure.InventoryMovement
             return _movements.GetAll().Where(b => b.MovementTypeiD == 2).ToList();
         }
 
-        public List<TrasactionCompleteDto> GetAllTransactionWihtCategory()
+        public List<TrasactionCompleteDto> GetAllTransactionComplete()
         {
             var listTransaction = _context.InventoryMovements
          .Include(i => i.Product)
